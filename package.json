@@ -1,0 +1,20 @@
+{
+  "name": "kalkulator-ci",
+  "private": true,
+  "devDependencies": {
+    "sass": "^1.77.0",
+    "terser": "^5.31.0",
+    "clean-css-cli": "^5.6.3"
+  },
+  "scripts": {
+    "build:sass": "sass Assets/scss/site.scss wwwroot/css/site.css --no-source-map",
+
+    "minify:site:css": "cleancss -o wwwroot/css/site.min.css wwwroot/css/site.css",
+    "minify:calc:css": "cleancss -o wwwroot/css/calculator.min.css wwwroot/css/calculator.css",
+
+    "minify:site:js": "terser wwwroot/js/site.js -o wwwroot/js/site.min.js -c -m",
+    "minify:calc:js": "terser wwwroot/js/calculator.js -o wwwroot/js/calculator.min.js -c -m",
+
+    "build:assets": "npm run build:sass && npm run minify:site:css && npm run minify:calc:css && npm run minify:site:js && npm run minify:calc:js"
+  }
+}
