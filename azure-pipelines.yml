@@ -42,5 +42,9 @@ steps:
   displayName: 'Deploy to Azure App Service'
   inputs:
     azureSubscription: 'SC-kalkulator-nowy'
-    appName: '$(webAppName)'
+    appType: 'webApp'
+    appName: 'Kalkulator20992'
+    resourceGroupName: 'bazy-danych'
     package: '$(Build.ArtifactStagingDirectory)/publish'
+
+
