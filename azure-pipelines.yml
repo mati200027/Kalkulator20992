@@ -39,6 +39,6 @@ steps:
 - task: AzureWebApp@1
   displayName: 'Deploy to Azure App Service'
   inputs:
-    azureSubscription: 'SC-azure-kalkulator'
+    azureSubscription: 'SC-kalkulator-nowy'
     appName: '$(webAppName)'
     package: '$(Build.ArtifactStagingDirectory)/publish'
